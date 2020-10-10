@@ -5,6 +5,29 @@
 [![License](https://img.shields.io/cocoapods/l/iCider.svg?style=flat)](https://cocoapods.org/pods/iCider)
 [![Platform](https://img.shields.io/cocoapods/p/iCider.svg?style=flat)](https://cocoapods.org/pods/iCider)
 
+Helper library for conversion from Android to iOS.
+
+I encountered many problems while converting an Android app to an iOS app.
+I made a library with the solutions to these problems.
+
+## How to use
+
+UIScrollView does not scroll when it has UIButton
+
++ UIScrollView -> ICScrollView
+
+UITableView is not showing in UIStackView
+
++ UITableView -> ICTableView
+
+UICollectionView is not showing in UIStackView
+
++ UICollectionView -> ICCollectionView
+
+Fit embedded UIViewController to its contents
+
++ UIViewController -> ICViewController
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -22,7 +45,7 @@ pod 'iCider'
 
 ## Author
 
-tobwithu, bwk@learninvest.co.kr
+tobwithu
 
 ## License
 
