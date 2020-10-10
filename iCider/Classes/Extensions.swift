@@ -27,3 +27,15 @@ extension UIStackView {
         removedSubviews.forEach({ $0.removeFromSuperview() })
     }
 }
+
+extension String{
+    public func substring(_ startIndex:Int, _ endIndex:Int) -> String{
+        let start = index(self.startIndex, offsetBy: startIndex)
+        let end = index(self.startIndex, offsetBy: endIndex)
+        return String(self[start..<end])
+    }
+    
+    public func substring(_ startIndex:Int) -> String{
+        return substring(startIndex, count - startIndex)
+    }
+}
