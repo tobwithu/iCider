@@ -26,7 +26,7 @@ UICollectionView is not showing in UIStackView
 
 Fit embedded UIViewController to its contents
 
-+ UIViewController -> ICViewController
++ UIViewController -> ICEmbeddedViewController
 
 ## Example
 
