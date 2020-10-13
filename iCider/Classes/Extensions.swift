@@ -7,6 +7,15 @@
 
 import Foundation
 
+extension StringProtocol {
+    public func indexOf<S: StringProtocol>(_ string: S, options: String.CompareOptions = []) -> Int {
+        if let idx = range(of: string, options: options)?.lowerBound{
+            return distance(from: self.startIndex, to: idx)
+        }
+        return -1
+    }
+}
+
 extension String{
     public func substring(_ startIndex:Int, _ endIndex:Int) -> String{
         let start = index(self.startIndex, offsetBy: startIndex)
@@ -15,6 +24,6 @@ extension String{
     }
     
     public func substring(_ startIndex:Int) -> String{
-        return substring(startIndex, count - startIndex)
+        return substring(startIndex, count)
     }
 }
