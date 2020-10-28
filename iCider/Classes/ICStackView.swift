@@ -29,4 +29,11 @@ open class ICStackView:UIStackView{
         removedSubviews.forEach({ $0.removeFromSuperview() })
         children.removeAll()
     }
+    
+    open func addPadding(_ size:CGFloat){
+        let v = UIView()
+        let anchor = axis == .horizontal ? v.widthAnchor : v.heightAnchor
+        anchor.constraint(equalToConstant: size).isActive = true
+        addArrangedSubview(v)
+    }
 }
