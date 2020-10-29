@@ -11,7 +11,11 @@ open class ICStackView:UIStackView{
     /// Without UIViewController reference, event does not work.
     open var children = Array<UIViewController>()
     
-    open func addView(_ viewController:UIViewController){
+    open func addView(_ viewController:UIViewController,_ size:CGFloat? = nil){
+        if let size = size{
+            let anchor = axis == .horizontal ? viewController.view.widthAnchor : viewController.view.heightAnchor
+            anchor.constraint(equalToConstant: size).isActive = true
+        }
         addArrangedSubview(viewController.view)
         children.append(viewController)
     }
@@ -30,8 +34,9 @@ open class ICStackView:UIStackView{
         children.removeAll()
     }
     
-    open func addPadding(_ size:CGFloat){
+    open func addPadding(_ size:CGFloat,_ color:UIColor? = nil){
         let v = UIView()
+        v.backgroundColor = color
         let anchor = axis == .horizontal ? v.widthAnchor : v.heightAnchor
         anchor.constraint(equalToConstant: size).isActive = true
         addArrangedSubview(v)
