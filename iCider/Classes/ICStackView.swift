@@ -34,11 +34,12 @@ open class ICStackView:UIStackView{
         children.removeAll()
     }
     
-    open func addPadding(_ size:CGFloat,_ color:UIColor? = nil){
+    open func addPadding(_ size:CGFloat,_ color:UIColor? = nil) -> UIView{
         let v = UIView()
         v.backgroundColor = color
         let anchor = axis == .horizontal ? v.widthAnchor : v.heightAnchor
         anchor.constraint(equalToConstant: size).isActive = true
         addArrangedSubview(v)
+        return v
     }
 }
